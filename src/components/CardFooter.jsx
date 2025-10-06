@@ -1,3 +1,6 @@
+import React from "react";
+import { motion } from "framer-motion";
+
 const CardFooter = () => {
   return (
     <div className="relative w-full h-[120vh]">
@@ -10,27 +13,27 @@ const CardFooter = () => {
 
       {/* Overlay negro semitransparente + degradado arriba y abajo */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-black/40"></div>{" "}
-        {/* oscurece todo */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>{" "}
-        {/* difuminado */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
       </div>
 
       {/* Contenido encima del GIF */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
         {/* Imagen centrada encima del texto */}
-        <img
-          src="https://media.discordapp.net/attachments/1398776532733788251/1423362564972216351/349372d4-654a-4353-abae-499441dc12ca.png?ex=68e00930&is=68deb7b0&hm=053743c913f52ebed027bc6f3812b67be71ee85b47e85691852b2880a7cb6059&=&format=webp&quality=lossless&width=897&height=897"
-          alt="Aegis"
-          className="w-65 md:w-60 mb-18" // tamaño y separación del texto
-        />
-        <h1
+        <img src="/Aegis.png" alt="Aegis" className="w-65 md:w-60 mb-18" />
+
+        {/* 👇 H1 animado con framer-motion */}
+        <motion.h1
           className="text-5xl md:text-8xl font-bold text-center"
           style={{ fontFamily: "Cinzel, serif", fontWeight: 600 }}
+          initial={{ opacity: 0, y: 80 }} // empieza invisible y desplazado
+          whileInView={{ opacity: 1, y: 0 }} // aparece cuando entra al viewport
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.5 }} // se repite al scrollear
         >
           <span className="text-white/50">¿Serás digno</span> <br />
           de reclamar el aegis?
-        </h1>
+        </motion.h1>
 
         <div className="w-24 h-[4px] bg-red-400 mt-6 mb-6"></div>
 
@@ -46,6 +49,7 @@ const CardFooter = () => {
             victorias se consagrará como campeón y reclamará el Aegis.
           </p>
         </div>
+
         <button
           className="mt-1 flex pl-6 pr-6 items-center gap-4 p-3 border-3 border-gray-400 rounded-lg text-white hover:border-white transition"
           style={{ fontFamily: "Fira Sans, sans-serif", fontWeight: 400 }}

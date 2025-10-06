@@ -6,6 +6,8 @@ import Unete from "./components/Unete";
 import CardFooter from "./components/CardFooter";
 import Footer from "./components/Footer";
 import NavBarComponent from "./components/NavBarComponent";
+import Podio from "./components/Podio";
+import Info from "./components/Info";
 
 function App() {
   return (
@@ -23,7 +25,8 @@ function App() {
             </>
           }
         />
-        <Route path="/about" element={<h1>Acerca de nosotros</h1>} />
+        <Route path="/podio" element={<Podio />} />
+        <Route path="/reglamento" element={<Info></Info>} />
       </Routes>
       <Footer />
     </div>

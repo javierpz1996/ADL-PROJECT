@@ -1,3 +1,6 @@
+import React from "react";
+import { motion } from "framer-motion";
+
 const Unete = () => {
   return (
     <div>
@@ -5,8 +8,7 @@ const Unete = () => {
       <div
         className="relative bg-cover bg-no-repeat text-white h-[70vh]"
         style={{
-          backgroundImage:
-            "url('https://media.discordapp.net/attachments/1398776532733788251/1423405188944891985/afkgaming_2023-10_904e1765-ed07-47d0-b739-853cfdc52957_Add_a_heading__46_-_1__1.jpg?ex=68e030e2&is=68dedf62&hm=3e3d78b8ee46ff774485f0a5d32e036334b18b190c3a74e0ff821bfd40e30025&=&format=webp&width=1510&height=793')",
+          backgroundImage: "url('/Unete.jpg')", // 👈 imagen desde la carpeta public
           backgroundPosition: "center 90%", // mueve la imagen hacia abajo
         }}
       >
@@ -20,22 +22,27 @@ const Unete = () => {
 
         {/* Contenido centrado al final de la imagen */}
         <div className="relative flex flex-col justify-end items-center h-full px-4">
-          <h1
+          <motion.h1
             className="text-6xl md:text-8xl font-bold text-center"
             style={{ fontFamily: "Cinzel, serif", fontWeight: 600 }}
+            initial={{ opacity: 0, y: 80 }} // 👈 inicia invisible y desplazado
+            whileInView={{ opacity: 1, y: 0 }} // 👈 aparece al entrar en vista
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.5 }} // 👈 se ejecuta cada vez que entra al viewport
           >
             <span className="text-white/50">Unete a</span> <br /> argentina dota
             league
-          </h1>
+          </motion.h1>
+
           <div className="w-24 h-[4px] bg-red-400 mt-6 mb-6"></div>
         </div>
       </div>
 
       {/* Sección negra abajo */}
-      <div className="bg-black text-white flex flex-col items-center text-center px-4 ">
+      <div className="bg-black text-white flex flex-col items-center text-center px-4">
         <div className="max-w-3xl">
           <p
-            className="text-base sm:text-lg mb-6" // text-base = 16px en mobile, sm:text-lg = 18px en desktop
+            className="text-base sm:text-lg mb-6"
             style={{ fontFamily: "Fira Sans, sans-serif", fontWeight: 400 }}
           >
             Cada semana, los mejores jugadores de Argentina se enfrentan en
