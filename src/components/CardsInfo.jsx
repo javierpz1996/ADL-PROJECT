@@ -10,19 +10,19 @@ const CardsInfo = () => {
     {
       title: "COMO EMPEZAR A JUGAR",
       date: "2 DE SEPTIEMBRE",
-      bg: "/Card2.png",
+      bg: "/card01.jpg",
       desc: "Aprendé cómo registrarte, unirte a un equipo y comenzar a competir en la liga. Encontrá toda la información necesaria para crear tu cuenta, configurar tu perfil, y empezar a jugar desde el primer día sin complicaciones.",
     },
     {
       title: "REGLAMENTO",
       date: "2 DE SEPTIEMBRE",
-      bg: "/Card4.jpg",
+      bg: "/card02.jpg",
       desc: "Conocé todas las reglas oficiales y el formato de los enfrentamientos. Aprendé sobre las penalizaciones, cómo se realizan las partidas, los horarios establecidos y cómo mantener el juego limpio para garantizar una competencia justa y organizada.",
     },
     {
       title: "SISTEMA DE PUNTOS",
       date: "2 DE SEPTIEMBRE",
-      bg: "/Card3.png",
+      bg: "/card03.jpg",
       desc: "Descubrí cómo se otorgan los puntos y cómo escalar posiciones en la liga. Entendé los criterios de clasificación, la puntuación por victoria o derrota, y cómo planificar tus partidas estratégicamente para maximizar tus resultados y avanzar en la tabla.",
     },
   ];
