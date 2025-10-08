@@ -1,3 +1,5 @@
+import React from "react";
+
 const Hero = () => {
   return (
     <section className="relative w-full h-[500px] sm:h-[620px] overflow-hidden">

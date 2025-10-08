@@ -40,8 +40,13 @@ const Podio = () => {
 
   const handleFiltro = (tipo) => {
     setModo(tipo);
+
     if (tipo === "seasonal") {
-      const filtrados = jugadores.filter((p) => p.seasonalPoints > 0);
+      const filtrados = jugadores
+        .filter((p) => p.seasonalPoints > 0)
+        .sort((a, b) => b.seasonalPoints - a.seasonalPoints) // Orden descendente
+        .map((p) => ({ ...p, seasonalPoints: Math.round(p.seasonalPoints) })); // Redondear puntos
+
       setJugadoresFiltrados(filtrados);
     } else {
       setJugadoresFiltrados(jugadores);
@@ -62,6 +67,7 @@ const Podio = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start pt-[15vh] pb-20 relative">
+      {/* Fondo */}
       <div
         className="absolute inset-0 sm:hidden"
         style={{
@@ -97,6 +103,8 @@ const Podio = () => {
         <div className="flex justify-center mb-10">
           <div className="w-16 sm:w-24 h-[3px] sm:h-[4px] bg-red-400"></div>
         </div>
+
+        {/* Botones de filtro */}
         <div className="flex gap-4 mb-8">
           <button
             onClick={() => handleFiltro("general")}
@@ -120,6 +128,7 @@ const Podio = () => {
           </button>
         </div>
 
+        {/* Tabla */}
         <Sheet
           sx={{
             width: { xs: "85%", sm: "600px" },
@@ -155,7 +164,7 @@ const Podio = () => {
                     lineHeight: "0.9rem",
                   }}
                 >
-                  Clasif.
+                  {modo === "general" ? "Clasif." : "Puntos"}
                 </th>
                 <th
                   className="flex items-center text-left"
@@ -191,7 +200,7 @@ const Podio = () => {
                           lineHeight: "0.9rem",
                         }}
                       >
-                        {j.pos}
+                        {modo === "general" ? j.pos : j.seasonalPoints}
                       </th>
                       <td
                         style={{
