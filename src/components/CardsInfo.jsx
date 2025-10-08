@@ -1,9 +1,8 @@
-import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom"; // 👈 importar Link
+import { Link } from "react-router-dom";
 
 const CardsInfo = () => {
   const cards = [
@@ -11,24 +10,27 @@ const CardsInfo = () => {
       title: "COMO EMPEZAR A JUGAR",
       date: "2 DE SEPTIEMBRE",
       bg: "/card01.jpg",
-      desc: "Aprendé cómo registrarte, unirte a un equipo y comenzar a competir en la liga. Encontrá toda la información necesaria para crear tu cuenta, configurar tu perfil, y empezar a jugar desde el primer día sin complicaciones.",
+      desc: "Aprendé cómo registrarte, unirte a un equipo y comenzar a competir en la liga...",
+      scrollTo: "top",
     },
     {
       title: "REGLAMENTO",
       date: "2 DE SEPTIEMBRE",
       bg: "/card02.jpg",
-      desc: "Conocé todas las reglas oficiales y el formato de los enfrentamientos. Aprendé sobre las penalizaciones, cómo se realizan las partidas, los horarios establecidos y cómo mantener el juego limpio para garantizar una competencia justa y organizada.",
+      desc: "Conocé todas las reglas oficiales y el formato de los enfrentamientos...",
+      scrollTo: "middle",
     },
     {
       title: "SISTEMA DE PUNTOS",
       date: "2 DE SEPTIEMBRE",
       bg: "/card03.jpg",
-      desc: "Descubrí cómo se otorgan los puntos y cómo escalar posiciones en la liga. Entendé los criterios de clasificación, la puntuación por victoria o derrota, y cómo planificar tus partidas estratégicamente para maximizar tus resultados y avanzar en la tabla.",
+      desc: "Descubrí cómo se otorgan los puntos y cómo escalar posiciones en la liga...",
+      scrollTo: "bottom",
     },
   ];
 
   return (
-    <Box sx={{ bgcolor: "black", py: 5 }}>
+    <Box sx={{ bgcolor: "black", pt: { xs: 0, sm: 5 }, pb: 5 }}>
       <Box
         sx={{
           maxWidth: "1220px",
@@ -45,8 +47,13 @@ const CardsInfo = () => {
           }}
         >
           REGLAMENTO{" "}
-          <span className="text-sm text-gray-400 pl-4">VER TODO </span>
-          <i className="fa-solid fa-arrow-right ml-1 text-gray-400"></i>
+          <Link
+            to="/reglamento"
+            className="text-sm text-gray-400 pl-3 flex items-center"
+            style={{ display: "inline-flex", alignItems: "center" }}
+          >
+            VER TODO <i className="fa-solid fa-arrow-right ml-1"></i>
+          </Link>
         </Typography>
       </Box>
 
@@ -73,9 +80,7 @@ const HoverCard = ({ card }) => {
   const [hover, setHover] = useState(false);
 
   return (
-    <Link to="/reglamento">
-      {" "}
-      {/* 👈 envolver la card con Link */}
+    <Link to="/reglamento" state={{ scrollTo: card.scrollTo }}>
       <motion.div
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
@@ -97,7 +102,6 @@ const HoverCard = ({ card }) => {
             borderRadius: 0,
           }}
         >
-          {/* Overlay animado más claro */}
           <motion.div
             animate={{
               backgroundColor: hover ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.3)",
@@ -113,7 +117,6 @@ const HoverCard = ({ card }) => {
             }}
           />
 
-          {/* Contenido animado */}
           <motion.div
             style={{
               position: "relative",
@@ -143,7 +146,6 @@ const HoverCard = ({ card }) => {
               {card.title}
             </Typography>
 
-            {/* Descripción que aparece al hacer hover */}
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{
@@ -163,7 +165,6 @@ const HoverCard = ({ card }) => {
             </motion.div>
           </motion.div>
 
-          {/* Borde inferior animado */}
           <motion.div
             style={{
               position: "absolute",

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 export default function NavBarComponent() {
   return (
     <nav className="absolute top-0 z-[9999] w-full bg-transparent px-4 sm:px-6 py-2 sm:py-4 flex items-center mt-3">
-      {/* Logo */}
       <div className="text-xl sm:text-2xl font-bold text-white mr-6 sm:mr-10">
         <Link to="/">
           <img
@@ -13,8 +12,6 @@ export default function NavBarComponent() {
           />
         </Link>
       </div>
-
-      {/* Links */}
       <div
         style={{ fontFamily: "Fira Sans, sans-serif", fontWeight: 400 }}
         className="flex flex-wrap sm:flex-nowrap space-x-4 sm:space-x-6 text-lg sm:text-2xl text-gray-200"
@@ -24,10 +21,6 @@ export default function NavBarComponent() {
         </Link>
         <Link to="/reglamento" className="hover:text-gray-300 transition">
           GUIA
-        </Link>
-
-        <Link to="/reglamento" className="hover:text-gray-300 transition">
-          REGLAMENTO
         </Link>
       </div>
     </nav>

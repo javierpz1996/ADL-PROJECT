@@ -1,5 +1,3 @@
-import React from "react";
-
 const Info = () => {
   return (
     <div
@@ -12,7 +10,6 @@ const Info = () => {
         fontFamily: "Fira Sans, sans-serif",
       }}
     >
-      {/* Encabezado principal */}
       <h1
         className="text-5xl sm:text-7xl text-center mb-4"
         style={{
@@ -24,8 +21,6 @@ const Info = () => {
       >
         Cómo empezar
       </h1>
-
-      {/* Línea decorativa centrada */}
       <div className="flex justify-center mb-10">
         <div className="w-16 sm:w-24 h-[3px] sm:h-[4px] bg-red-400"></div>
       </div>
@@ -39,13 +34,10 @@ const Info = () => {
       >
         5 DE OCTUBRE 2025
       </p>
-
-      {/* Contenedor principal */}
       <div
         className="flex flex-col items-center w-full"
         style={{ maxWidth: "1000px" }}
       >
-        {/* Imagen */}
         <div className="flex justify-center mb-8 w-full">
           <img
             src="https://clan.akamai.steamstatic.com/images/3703047/c1bc2216355cc4e326102d2af2c570ca5185dfb4.png"
@@ -53,13 +45,10 @@ const Info = () => {
             className="w-full h-auto"
           />
         </div>
-
-        {/* Texto */}
         <div
           className="w-full space-y-20 text-left"
           style={{ color: "rgba(255, 255, 255, 0.8)" }}
         >
-          {/* Sección 1 */}
           <div>
             <p
               style={{
@@ -104,8 +93,6 @@ const Info = () => {
               habilitado para integrarte a la liga y empezar a jugar.
             </p>
           </div>
-
-          {/* Sección 2 - Reglamento */}
           <div>
             <h1
               className="text-5xl sm:text-7xl text-center my-4"
@@ -118,8 +105,6 @@ const Info = () => {
             >
               Reglamento
             </h1>
-
-            {/* Línea decorativa centrada */}
             <div className="flex justify-center mb-10">
               <div className="w-16 sm:w-24 h-[3px] sm:h-[4px] bg-red-400"></div>
             </div>
@@ -159,8 +144,6 @@ const Info = () => {
               consejeros disponibles de la liga según la gravedad del caso.
             </p>
           </div>
-
-          {/* Sección 3 - Sistema de puntos */}
           <div>
             <h1
               className="text-5xl sm:text-7xl text-center my-4"
@@ -173,8 +156,6 @@ const Info = () => {
             >
               Sistema de puntos
             </h1>
-
-            {/* Línea decorativa centrada */}
             <div className="flex justify-center mb-10">
               <div className="w-16 sm:w-24 h-[3px] sm:h-[4px] bg-red-400"></div>
             </div>
