@@ -127,8 +127,6 @@ const Podio = () => {
             Ranking Season
           </button>
         </div>
-
-        {/* Tabla */}
         <Sheet
           sx={{
             width: { xs: "85%", sm: "600px" },
